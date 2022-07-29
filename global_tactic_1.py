@@ -14,16 +14,15 @@ number_of_files = int(sys.argv[1])
 # Delay 5s for time to open (Ctrl + Tab) browser and filnder windows
 time.sleep(5)
 
-def uploaded():
-    """Looking for upload button"""
+def present(file_name):
+    """Looking for specific img"""
     while(True):
-        if pag.locateCenterOnScreen('img/upload.png', grayscale=True, region=(0, 0, 500, 500)): return True
+        if pag.locateCenterOnScreen("img/{}.png".format(file_name), grayscale=True, region=(0, 0, 500, 500)): return True
         time.sleep(0.2)
 
 def run(number):
-    for i in range(number):
-        if uploaded(): move_file()
-        time.sleep(5)
+    if present('upload') and present('file'): move_file()
+    time.sleep(5)
 
 def finder():
   '''Click on Finder window'''
