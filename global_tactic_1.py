@@ -12,7 +12,7 @@ time.sleep(5)
 def present(file_name):
     """Looking for specific img"""
     while(True):
-        if pag.locateCenterOnScreen("img/{}.png".format(file_name), grayscale=True, region=(0, 0, 500, 500)): return True
+        if pag.locateCenterOnScreen("img/{}.png".format(file_name), grayscale=True, region=(0, 0, 1920, 350)): return True
         time.sleep(0.2)
 
 def run():
