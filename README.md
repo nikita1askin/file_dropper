@@ -22,5 +22,6 @@ If you want to use this script, you should set up 6 things. 5 points on your scr
 Make a screenshot of the upload button and put it in /img folder near script.
 
 ### How to use this script:
-
+Open windows side by side (On the left Browser, on right finder (as Lis view))
+Run $ python3 global_tactic_1.py 
 
