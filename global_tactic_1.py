@@ -2,14 +2,9 @@ import pyautogui as pag
 import time, os, sys, cv2, datetime
 ''' Before running this script open the browser and tile it left,
  on the right side open Finder.
-  Upload first file, to set region in uploading window.
-  To upload 100 files: 
-    [ python3 100 ]
     
 '''
-# python3 global_tactic_1.py 100
-# 100 files
-number_of_files = int(sys.argv[1])
+# python3 global_tactic_1.py 
 
 # Delay 5s for time to open (Ctrl + Tab) browser and filnder windows
 time.sleep(5)
@@ -20,7 +15,7 @@ def present(file_name):
         if pag.locateCenterOnScreen("img/{}.png".format(file_name), grayscale=True, region=(0, 0, 500, 500)): return True
         time.sleep(0.2)
 
-def run(number):
+def run():
     if present('upload') and present('file'): move_file()
     time.sleep(5)
 
@@ -44,4 +39,4 @@ def move_file():
     # Location of folder athena_results 1552, 158
     pag.dragTo(1569, 119, 0.2, button='left')
 
-run(number_of_files)
+run()
