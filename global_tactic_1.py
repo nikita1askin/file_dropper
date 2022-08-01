@@ -9,15 +9,16 @@ import time, os, sys, cv2, datetime
 # Delay 5s for time to open (Ctrl + Tab) browser and filnder windows
 time.sleep(5)
 
-def present(file_name):
+def present(file_name, region):
     """Looking for specific img"""
     while(True):
-        if pag.locateCenterOnScreen("img/{}.png".format(file_name), grayscale=True, region=(0, 0, 1920, 350)): return True
-        time.sleep(0.2)
+        if pag.locateCenterOnScreen("img/{}.png".format(file_name), grayscale=True, region=region, confidence=0.85): return True
+        time.sleep(0.1)
 
 def run():
-    if present('upload') and present('file'): move_file()
-    time.sleep(5)
+    while(True):
+        if present('upload', (100, 100, 350, 350)) and present('file', (1400, 100, 1600, 200)): move_file()
+        time.sleep(5)
 
 def finder():
   '''Click on Finder window'''
