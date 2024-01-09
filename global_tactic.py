@@ -34,7 +34,7 @@ def move_file():
     click_location(UPLOAD_BUTTON_FINAL, clicks=2)
     click_location(FINDER_WINDOW)
     pag.dragTo(FOLDER_ATHENA_RESULTS[0], FOLDER_ATHENA_RESULTS[1], 0.2, button='left')
-
+    print("File uploaded at: {}".format(datetime.datetime.now()))
 
 def run():
     while True:
